@@ -1,18 +1,18 @@
 Problem
-=======
+-------
 
 Design a Tic Tac Toe game.
 
 
 Analysis
-========
+--------
 
 This question is a very good candidate to test how well we can come up with a object-oriented design for a popular game. 
 There are likely only a few objects and minimal interaction so it is well-suited for a 30 to 1 hour interview.
 
 1. Questions to ask
 
-The problem is very short so depending if you know the game or not, you can ask several questions to understand 
+The problem statement is very short so depending if you know the game or not, you can ask several questions to understand 
 more about the requirements. For example, you can ask:
 
 - What are the size of the board? Is it 3x3 or nxn?
