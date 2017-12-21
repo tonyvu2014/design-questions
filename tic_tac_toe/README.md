@@ -20,10 +20,21 @@ more about the requirements. For example, you can ask:
 
 Try to map from the real objects related to the game to the entities. On minimal, we can come up with the following classes:
 
-- Cell (represent a cell on the board)
 - Board (represents a tic tac toe board)
 - Player (obviously represents a player)
 - Game (represents a game) 
+
+3. Implementation
+
+Assuming after clarifications, you are asked to implement a generic tic tac toe game on the game board of size n x n. The first player always plays O, and second player always plays X. One thing to take note that the game may end without any winner. Also need to take note that a move by player may be invalid if:
+
+- The cell is already played (No replay allowed)
+- Play outside of the board
+- The game is already finished
+
+The conditions to win the game are:
+
+- The first player forms the a row, a column or a diagonal line of the same symbol win the game.
 
 
 
