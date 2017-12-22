@@ -23,7 +23,9 @@ To save time, you probably want to ignore trivial like contructors or getters an
 
 4. Refine the design with abstraction, interface or design patterns.
 
-Make sure that you know the differences between abstract class and interface and also know when you make use of common design patterns like Factory, Singleton, Builder, Strategy. Remember to clarify why you use abstract class, interface or a design pattern.
+Make sure that you know the differences between abstract class and interface and also know when you make use of common design patterns like Factory, Singleton, Builder, Strategy. An easier way to look at this is that: if there are something that you need to do more than once, there is a chance for refinement.
+
+Remember to clarify why you use abstract class, interface or a design pattern.
 
 5. Scaling
 

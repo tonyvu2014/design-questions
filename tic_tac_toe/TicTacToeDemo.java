@@ -1,4 +1,4 @@
-public class TicTacToe {
+public class TicTacToeDemo {
 
     public static void main(String[] args) {
         Player firstPlayer = new Player();
