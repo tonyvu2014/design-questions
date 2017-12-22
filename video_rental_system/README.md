@@ -39,3 +39,5 @@ They key to observe is that the 3 schemes only differs in normal price, overchar
 - They share common behaviours (the calculation of the rental price)
 
 So which price model should we use given the video type? When there are instances of different types to choose from, you should think of Factory pattern (when there are different algorithms to choose from, you should think of Strategy pattern). The benefits of using Factory pattern is the flexibility to add in other price models in the future (We only need to update the PriceModelFactory class).
+
+I think the Customer class is somewhat redundant and is included for the sake of completion.
