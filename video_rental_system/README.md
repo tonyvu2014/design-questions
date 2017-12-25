@@ -10,7 +10,7 @@ The system needs to handle the following rental schemes:
 
 # Analysis  
 
-Aside from OOD, this question also test how well you are at designing abstraction and interface. The key point to remember is not to make assumptions about the regular prices, overcharged price and number of days to overcharge. Come up with the entitiy design first, and then throw in design patterns if it is suitable.
+Aside from OOD, this question also tests how well you are at designing abstraction and interface. The key point to remember is not to make assumptions about the regular prices, overcharged price and number of days to overcharge. Come up with the entitiy design first, and then throw in design patterns if it is suitable.
 
 1. Questions to ask
 
