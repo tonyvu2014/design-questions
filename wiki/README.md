@@ -44,25 +44,25 @@ Our implementation is for in-memory store of the data. There are a few things to
 4. Scaling
 
 The challenge of this question can be in scaling the system to serve a lot of users.
-In a real wiki system like wikipedia, millions of new posts are added per day and even more are viewed by public users. To create a high-resilient, high-performant system, we likely need to deploy multiple instances of the app behind load balancers. Assuming that data is store to a database, then the same should be applied to database: multiple copies of the databases should be deployed behind load balancers. Since there are normally a lot more reads than writes, a master-slave replication can be set up with several masters for writing and a lot of slaves for reading. To enhance data retrieval time even further, a cache like memcached or redis can be used in front of the database system. Do not forget to mention about the disadvantages of your designs: load balancer,replication and cache. Here are some examples.
+In a real wiki system like wikipedia, millions of new posts are added per day and even more are viewed by public users. To create a high-resilient, high-performant system, we likely need to deploy multiple instances of the app behind load balancers. Assuming that data is stored to a database, then the same should be applied to database: multiple copies of the databases should be deployed behind load balancers. Since there are normally a lot more reads than writes, a master-slave replication can be set up with several masters for writing and many slaves for reading. To enhance data retrieval time even further, a cache like memcached or redis can be used in front of the database. Do not forget to mention about the potential issues of each component: load balancer, replication and cache as well as how to tackle them. Here are some examples.
 
 Disadvantages of load balancers:
-- Single point (or several points) of failure
-- Need to maintain data consistency between requests (Different requests need to hit the same server)
-- Hardware solutions are costly, software solutions like nginx, haproxy needs skills to set up
-- Imbalance of loads between servers (How to tackle this?)
+- Single point (or several points) of failure - Enhance with 2 or more load balancers
+- Need to maintain data consistency between requests (Different requests need to hit the same server) - Tackle with session cookie in load balancers or server lookup scheme using client's IP addresss' hashes.
+- Hardware solutions are costly, software solutions like nginx, haproxy needs skills to set up - Software solutions are better in general
+- Imbalance of loads between servers - Round robin, Least load server lookup scheme on load balancers
 
 Disadvantages of caching:
-- Oudated data in the cache (How to tackle this?)
-- Single point of failure
-- Take up memory so it is only limited in size
+- Oudated data in the cache - Carefully set the time to expire to clear the cache or use write-through machenism
+- Single point of failure - Use sophisticated and distributed caching system like memcached
+- Take up memory so it is only limited in size - Distributed caching system
 
 Disadvantages of replication:
-- If only 1 master, there is a single point of failure
-- Hardware cost
-- Inconsistency between database instances
-- Delay of data population
-- Network bandwidth required for replication
+- If only 1 master, there is a single point of failure - Can have 2 or more masters, or switch to master-master
+- Hardware cost - Horizontal scaling can be cheaper
+- Inconsistency between database instances - Implement replication failure detection, retry to make it consistent eventually
+- Delay of data population - Early failure detection
+- Network bandwidth required for replication - Set up number of database instances based on demand
 
 
 
